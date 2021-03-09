@@ -97,7 +97,7 @@ body{
                         }
                     }
                 }
-                .detail-bar{
+                /* .detail-bar{
                     display: flex;
                     height: 60px;
                     align-items: center;
@@ -118,11 +118,52 @@ body{
                     .name{
                         padding-right: 350px;
                     }
-                }
+                } */
                 
-                
+                table {
+                    /* display: block;
+                    font-family: sans-serif;
+                    -webkit-font-smoothing: antialiased; */
+                    font-size: 115%;
+                    /* overflow: auto; */
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 0 10px;
+                    tr {
+                        height: 61px;
+                    }
+                    th {
+                      background-color:#fff;
+                      color: black;
+                      font-weight: normal;
+                      padding: 0px 30px;
+                      text-align: center;
+                      border-radius: 5px;
+                    }
+                    td {
+                      background-color: #fff;
+                      color: rgb(111, 111, 111);
+                      padding: 0px 30px;
+                      border-radius: 5px;
+                      
+                      .edit{
+                        width: 25px;
+                      }
+                      .view{
+                          width: 150px;
+                          height: 61PX;
+                          background-color: #1CA6EB;
+                          border: none;
+                          outline: none;
+                          border-radius:  0px 5px 5px 0px ;
+                          transform: translateX(95px);
+                      }
+                      
+                    }
+                  }
+                  
                     /* product box */
-                    .product-info{
+                    /* .product-info{
                         align-items: center;
                         display: flex;
                         height: 60px;
@@ -163,8 +204,11 @@ body{
                             border-radius: 5px;
                             transform: translateX(1);
                         }
-                    }
+                    } */
                     /* end of product box */
+                    /* product table */
+                    
+                    /* end of product table */
                 
                 
             }
