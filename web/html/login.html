@@ -12,13 +12,18 @@
 <body>
   <canvas></canvas>
   <a href="https://hakim.se"></a>
+
+
   <form action="login.html" class="box">
     <H1>Login</H1>
-    <input class="input" type="text" placeholder="Email">
-    <input class="input" type="password" placeholder="password">
-    <button>Login</button>
+    <input class="input" id="email" type="text" required  placeholder="Email" onkeydown="validation()">
+    <span id="text"></span>
+    <input class="input" required type="password" placeholder="password">
+    <button id="login">Login</button>
   </form>
 
+
+  <script src="../JS/confirmation.js"></script>
   <script src="../JS/login.js"></script>
 </body>
 

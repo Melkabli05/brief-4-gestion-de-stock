@@ -15,13 +15,12 @@ body section {
 }
 
 body section .first-container {
-  position: fixed;
-}
-
-body section .first-container .menu {
   width: 400px;
   height: 100vh;
   background: #1ca6eb;
+}
+
+body section .first-container .menu {
   border: none;
 }
 

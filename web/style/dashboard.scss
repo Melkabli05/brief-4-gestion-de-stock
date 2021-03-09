@@ -8,11 +8,11 @@ body{
     section{
               display: flex;
             .first-container{
-                position: fixed;
-                .menu{
-                    width: 400px;
+                width: 400px;
                     height: 100vh;
                     background: #1ca6eb;
+                .menu{
+                    
                     border: none;
                     
                     ul{
