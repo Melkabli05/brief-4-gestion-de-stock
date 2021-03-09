@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #F5F6FA;
+    section{
+              display: flex;
+            .first-container{
+                .menu{
+                    width: 400px;
+                    height: 100vh;
+                    background: #1ca6eb;
+                    border: none;
+                    
+                    ul{
+                        margin-top: 50%;
+                    }
+                    li{
+                       text-align: center;
+                       margin-bottom: 10px;
+                        a{
+                            text-decoration: none;
+                            list-style: none;
+                            font-family: Poppins;
+                            font-weight: 600;
+                            font-size: 27px;
+                            text-align: center;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            .second-container{
+                margin-left: 60px;
+                margin-right: 60px;
+                .admin-info{
+                    margin-TOP: 20px;
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    right: 100px;
+                    
+                    img{
+                        margin: 10px;
+                    }
+                    #setting{
+                        width: 25px;
+                    }
+                    #notification{
+                        width: 25px;
+                    }
+                    #profile{
+                        width: 80px;
+                        border-radius: 50%;
+                    }
+                }
+                .search{
+                    margin-top: 10%;
+                    margin-bottom: 10px;
+                    
+                    display: flex;
+                    .searchbox{
+                        input{
+                            height: 46px;
+                            width: 700px;
+                            outline: none;
+                            
+                            border-color: #707070;
+                            border-radius: 5px;
+                        }
+                        button{
+                            height: 50px;
+                            width: 150px;
+                            border-radius: 5px;
+                            outline: none;
+                            border: none;
+                            background-color: #707070;
+                            color: #fff;
+                        }
+                    }
+                    .edit-button{
+                        button{
+                            border-radius: 5px;
+                            height: 50px;
+                            width: 250px;
+                            margin-left: 10px;
+                            outline: none;
+                            border: 1px;
+                        }
+                        #add{
+                            background-color: #1CA6EB;
+                        }
+                        #remove{
+                            background-color: #F02608;
+                        }
+                    }
+                }
+                .detail-bar{
+                    display: flex;
+                    height: 60px;
+                    align-items: center;
+                    background-color: #fff;
+                    
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    input{
+                        margin-right: 50px; 
+                        margin-left: 80px;
+                        width: 20px;
+                        height: 20px;
+                        
+                    }
+                    h5{
+                        margin-right: 100px;
+                    }
+                    .name{
+                        padding-right: 350px;
+                    }
+                }
+                
+                
+                    /* product box */
+                    .product-info{
+                        align-items: center;
+                        display: flex;
+                        height: 60px;
+                        background-color: #fff;
+                        
+                        border-radius: 5px;
+                        input{
+                            margin-left: 80px;
+                            margin-right: 50px;
+                            width: 20px;
+                            height: 20px;
+                        }
+                        img{
+                            margin-right: 38px;
+                            transform: translateX(-30px);
+                            width: 100px;
+                            height: 50px;
+                        }
+                        .edit{
+                            margin-right: 0;
+                            width: 25px;
+                            color: blue;
+                        }
+                        h5{
+                            margin-right: 100px;
+                            
+                        }
+                        .name{
+                            width: 483px;
+                            margin-right: 0;
+                        }
+                        BUtton{
+                            height: 60px;
+                            width: 80px;
+                            background-color: #1CA6EB;
+                            outline: none;
+                            border: none;
+                            border-radius: 5px;
+                            transform: translateX(1);
+                        }
+                    }
+                    /* end of product box */
+                
+                
+            }
+        
+    }
+}

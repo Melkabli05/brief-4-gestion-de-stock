@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F5F6FA;
+}
+
+body section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body section .first-container .menu {
+  width: 400px;
+  height: 100vh;
+  background: #1ca6eb;
+  border: none;
+}
+
+body section .first-container .menu ul {
+  margin-top: 50%;
+}
+
+body section .first-container .menu li {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+body section .first-container .menu li a {
+  text-decoration: none;
+  list-style: none;
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 27px;
+  text-align: center;
+  color: #fff;
+}
+
+body section .second-container {
+  margin-left: 60px;
+  margin-right: 60px;
+  /* product box */
+  /* end of product box */
+}
+
+body section .second-container .admin-info {
+  margin-TOP: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: 100px;
+}
+
+body section .second-container .admin-info img {
+  margin: 10px;
+}
+
+body section .second-container .admin-info #setting {
+  width: 25px;
+}
+
+body section .second-container .admin-info #notification {
+  width: 25px;
+}
+
+body section .second-container .admin-info #profile {
+  width: 80px;
+  border-radius: 50%;
+}
+
+body section .second-container .search {
+  margin-top: 10%;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body section .second-container .search .searchbox input {
+  height: 46px;
+  width: 700px;
+  outline: none;
+  border-color: #707070;
+  border-radius: 5px;
+}
+
+body section .second-container .search .searchbox button {
+  height: 50px;
+  width: 150px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #707070;
+  color: #fff;
+}
+
+body section .second-container .search .edit-button button {
+  border-radius: 5px;
+  height: 50px;
+  width: 250px;
+  margin-left: 10px;
+  outline: none;
+  border: 1px;
+}
+
+body section .second-container .search .edit-button #add {
+  background-color: #1CA6EB;
+}
+
+body section .second-container .search .edit-button #remove {
+  background-color: #F02608;
+}
+
+body section .second-container .detail-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+body section .second-container .detail-bar input {
+  margin-right: 50px;
+  margin-left: 80px;
+  width: 20px;
+  height: 20px;
+}
+
+body section .second-container .detail-bar h5 {
+  margin-right: 100px;
+}
+
+body section .second-container .detail-bar .name {
+  padding-right: 350px;
+}
+
+body section .second-container .product-info {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+body section .second-container .product-info input {
+  margin-left: 80px;
+  margin-right: 50px;
+  width: 20px;
+  height: 20px;
+}
+
+body section .second-container .product-info img {
+  margin-right: 38px;
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+  width: 100px;
+  height: 50px;
+}
+
+body section .second-container .product-info .edit {
+  margin-right: 0;
+  width: 25px;
+  color: blue;
+}
+
+body section .second-container .product-info h5 {
+  margin-right: 100px;
+}
+
+body section .second-container .product-info .name {
+  width: 483px;
+  margin-right: 0;
+}
+
+body section .second-container .product-info BUtton {
+  height: 60px;
+  width: 80px;
+  background-color: #1CA6EB;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  -webkit-transform: translateX(1);
+          transform: translateX(1);
+}
+/*# sourceMappingURL=dashboard.css.map */
