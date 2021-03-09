@@ -14,6 +14,10 @@ body section {
   display: flex;
 }
 
+body section .first-container {
+  position: fixed;
+}
+
 body section .first-container .menu {
   width: 400px;
   height: 100vh;
@@ -41,7 +45,7 @@ body section .first-container .menu li a {
 }
 
 body section .second-container {
-  margin-left: 60px;
+  margin-left: auto;
   margin-right: 60px;
   /* .detail-bar{
                     display: flex;
@@ -198,6 +202,12 @@ body section .second-container table {
 
 body section .second-container table tr {
   height: 61px;
+  text-align: center;
+}
+
+body section .second-container table tr img {
+  width: 100px;
+  height: 50px;
 }
 
 body section .second-container table th {
@@ -205,8 +215,12 @@ body section .second-container table th {
   color: black;
   font-weight: normal;
   padding: 0px 30px;
-  text-align: center;
   border-radius: 5px;
+}
+
+body section .second-container table .product-name {
+  width: 300px;
+  text-align: left;
 }
 
 body section .second-container table td {
@@ -216,18 +230,23 @@ body section .second-container table td {
   border-radius: 5px;
 }
 
+body section .second-container table td .product-name {
+  width: 300px;
+  text-align: center;
+}
+
 body section .second-container table td .edit {
   width: 25px;
 }
 
-body section .second-container table td .view {
+body section .second-container table td .view-btn {
   width: 150px;
   height: 61PX;
   background-color: #1CA6EB;
   border: none;
   outline: none;
   border-radius: 0px 5px 5px 0px;
-  -webkit-transform: translateX(95px);
-          transform: translateX(95px);
+  -webkit-transform: translateX(38px);
+          transform: translateX(38px);
 }
 /*# sourceMappingURL=dashboard.css.map */
