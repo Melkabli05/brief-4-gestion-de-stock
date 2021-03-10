@@ -1,234 +1,312 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
-*{
-    margin: 0;
+* {
     padding: 0;
-}
-body{
-    background-color: #F5F6FA;
-    section{
-              display: flex;
-            .first-container{
-                width: 400px;
-                    height: 100vh;
-                    background: #1ca6eb;
-                .menu{
-                    
-                    border: none;
-                    
-                    ul{
-                        margin-top: 50%;
-                    }
-                    li{
-                       text-align: center;
-                       margin-bottom: 10px;
-                        a{
-                            text-decoration: none;
-                            list-style: none;
-                            font-family: Poppins;
-                            font-weight: 600;
-                            font-size: 27px;
-                            text-align: center;
-                            color: #fff;
-                        }
-                    }
-                }
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  body{
+      background-color:#F5F6FA;
+  }
+  .nav-bar {
+    position: fixed;
+  
+    nav {
+      background: #1CA6EB;
+      line-height: 80px;
+      position: fixed;
+      width: 100%;
+  
+      label {
+        line-height: 80px;
+        font-size: 30px;
+        color: white;
+        font-weight: 200;
+        margin-left: 50px;
+        cursor: pointer;
+      }
+  
+      ul {
+        float: right;
+        margin-right: 20px;
+  
+        li {
+          line-height: 80px;
+          margin: 0 10px;
+  
+          a {
+            color: white;
+            font-size: 20px;
+            padding: 6px 15px;
+            font-weight: 600;
+            background-color: rgb(55, 34, 246);
+            border-radius: 3px;
+  
+            &:hover {
+              background-color: rgb(49, 27, 214);
+              color: white;
+              transition: 0.5s;
             }
-            .second-container{
-                margin-left: auto;
-                margin-right: 60px;
-                .admin-info{
-                    margin-TOP: 20px;
-                    display: flex;
-                    align-items: center;
-                    position: absolute;
-                    right: 100px;
-                    
-                    img{
-                        margin: 10px;
-                    }
-                    #setting{
-                        width: 25px;
-                    }
-                    #notification{
-                        width: 25px;
-                    }
-                    #profile{
-                        width: 80px;
-                        border-radius: 50%;
-                    }
-                }
-                .search{
-                    margin-top: 10%;
-                    margin-bottom: 10px;
-                    
-                    display: flex;
-                    .searchbox{
-                        input{
-                            height: 46px;
-                            width: 700px;
-                            outline: none;
-                            
-                            border-color: #707070;
-                            border-radius: 5px;
-                        }
-                        button{
-                            height: 50px;
-                            width: 150px;
-                            border-radius: 5px;
-                            outline: none;
-                            border: none;
-                            background-color: #707070;
-                            color: #fff;
-                            
-                        }
-                    }
-                    .edit-button{
-                        button{
-                            border-radius: 5px;
-                            height: 50px;
-                            width: 250px;
-                            margin-left: 10px;
-                            outline: none;
-                            border: 1px;
-                        }
-                        #add{
-                            background-color: #1CA6EB;
-                        }
-                        #remove{
-                            background-color: #F02608;
-                        }
-                    }
-                }
-                /* .detail-bar{
-                    display: flex;
-                    height: 60px;
-                    align-items: center;
-                    background-color: #fff;
-                    
-                    margin-bottom: 10px;
-                    border-radius: 5px;
-                    input{
-                        margin-right: 50px; 
-                        margin-left: 80px;
-                        width: 20px;
-                        height: 20px;
-                        
-                    }
-                    h5{
-                        margin-right: 100px;
-                    }
-                    .name{
-                        padding-right: 350px;
-                    }
-                } */
-                
-                table {
-                    /* display: block;
-                    font-family: sans-serif;
-                    -webkit-font-smoothing: antialiased; */
-                    font-size: 115%;
-                    /* overflow: auto; */
-                    width: 100%;
-                    border-collapse: separate;
-                    border-spacing: 0 10px;
-                    tr {
-                        height: 61px;
-                        text-align: center;
-                        img{
-                            width: 100px;
-                            height: 50px;
-                        }
-                    }
-                    th {
-                      background-color:#fff;
-                      color: black;
-                      font-weight: normal;
-                      padding: 0px 30px;
-                      border-radius: 5px;
-                      
-                      
-                    }
-                    .product-name{
-                        width: 300px;
-                        text-align: left;
-                    }
-                    td {
-                      background-color: #fff;
-                      color: rgb(111, 111, 111);
-                      padding: 0px 30px;
-                      border-radius: 5px;
-                      
-                      
-                      .product-name{
-                        width: 300px;
-                        text-align: center;
-                    }
-                      .edit{
-                        width: 25px;
-                      }
-                      .view-btn{
-                          width: 150px;
-                          height: 61PX;
-                          background-color: #1CA6EB;
-                          border: none;
-                          outline: none;
-                          border-radius:  0px 5px 5px 0px ;
-                          transform: translateX(38px);
-                      }
-                      
-                    }
-                  }
-                  
-                    /* product box */
-                    /* .product-info{
-                        align-items: center;
-                        display: flex;
-                        height: 60px;
-                        background-color: #fff;
-                        
-                        border-radius: 5px;
-                        input{
-                            margin-left: 80px;
-                            margin-right: 50px;
-                            width: 20px;
-                            height: 20px;
-                        }
-                        img{
-                            margin-right: 38px;
-                            transform: translateX(-30px);
-                            width: 100px;
-                            height: 50px;
-                        }
-                        .edit{
-                            margin-right: 0;
-                            width: 25px;
-                            color: blue;
-                        }
-                        h5{
-                            margin-right: 100px;
-                            
-                        }
-                        .name{
-                            width: 483px;
-                            margin-right: 0;
-                        }
-                        BUtton{
-                            height: 60px;
-                            width: 80px;
-                            background-color: #1CA6EB;
-                            outline: none;
-                            border: none;
-                            border-radius: 5px;
-                            transform: translateX(1);
-                        }
-                    } */
-                    /* end of product box */
-                    /* product table */
-                    
-                    /* end of product table */
-                
-                
-            }
-        
+          }
+        }
+      }
     }
-}
+  }
+  
+  .content-container {
+    display: flex;
+  }
+  
+  .side-menu {
+    position: fixed;
+    background: #1CA6EB;
+    width: 250px;
+    height: 100%;
+    margin-top: 80px;
+  
+    center {
+      img {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        margin-top: 30px;
+        border: 3px solid white;
+      }
+  
+      h2 {
+        color: white;
+      }
+    }
+  
+    a {
+      display: block;
+      line-height: 60px;
+      transition: 0.5s;
+  
+      &:hover {
+        background: rgb(86, 178, 221);
+        padding-left: 20px;
+      }
+    }
+  
+    span {
+      font-size: 20px;
+      margin-left: 10px;
+      color: white;
+    }
+  
+    i {
+      font-size: 20px;
+      margin-left: 20px;
+      color: white;
+    }
+  }
+  
+  nav .menu-bar {
+    float: right;
+    margin-top: 20px;
+    display: none;
+    margin-right: 20px;
+  }
+  
+  #menu, .side-menu .Logout {
+    display: none;
+  }
+  
+  @media (max-width: 850px) {
+    .side-menu {
+      a span, center {
+        display: none;
+      }
+  
+      width: 100px;
+  
+      a i {
+        display: block;
+        line-height: 80px;
+        text-align: center;
+        margin-left: 0;
+        font-size: 35px;
+      }
+    }
+
+  }
+  
+  @media (max-width: 650px) {
+    .data, nav ul {
+      display: none;
+    }
+  
+    .side-menu {
+      width: 100%;
+      text-align: center;
+      left: 100%;
+      background-color: #4c516d;
+      transition: all 0.5s;
+  
+      a {
+        i {
+          display: none;
+        }
+  
+        span {
+          display: block;
+        }
+      }
+  
+      .Logout {
+        display: block;
+      }
+    }
+  
+    nav .menu-bar {
+      display: block;
+    }
+  }
+  
+  #menu:checked ~ .side-menu {
+    left: 0;
+  }
+  
+  
+  /* ========content========= */
+  .body-container{
+    margin-top: 85px;
+    margin-left: 250PX;
+    width: 100%;
+    .search{
+      margin-top: 40PX;
+      margin-bottom: 10px;
+      margin-left: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      
+      .searchbox{
+          
+          input{
+              height: 46px;
+              width: 700px;
+              outline: none;
+              
+              border-color: #707070;
+              border-radius: 5px;
+          }
+          button{
+              height: 50px;
+              width: 150px;
+              border-radius: 5px;
+              outline: none;
+              border: none;
+              background-color: #707070;
+              color: #fff;
+              
+          }
+      }
+      .edit-button{
+          button{
+              border-radius: 5px;
+              height: 50px;
+              width: 250px;
+              margin-left: 10px;
+              outline: none;
+              border: 1px;
+          }
+          #add{
+              background-color: #1CA6EB;
+          }
+          #remove{
+              background-color: #F02608;
+          }
+      }
+  }
+  
+  
+  table {
+      /* display: block;
+       
+      font-size: 115%;
+      overflow: auto; */
+      margin-top: 10px;
+      margin-left: 40px;
+      width: 95%;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+      tr {
+          height: 61px;
+          text-align: center;
+          img{
+              width: 100px;
+              height: 50px;
+          }
+          .first {
+              border-radius: 5px 0 0 5PX;
+          }
+          .last{
+              border-radius: 0 5PX 5PX 0;
+          }
+          
+          
+      }
+      th {
+        background-color:#1CA6EB;
+        color: black;
+        font-weight: normal;
+        padding: 0px 30px;
+        
+        .first {
+          .first {
+              border-radius: 5px 0 0 5PX;
+          }
+          
+          
+  }
+  
+  
+        
+      }
+      .product-name{
+          width: 300px;
+          text-align: left;
+      }
+      td {
+        background-color: #fff;
+        color: rgb(111, 111, 111);
+        padding: 0px 30px;
+        
+        
+        
+        .product-name{
+          width: 300px;
+          text-align: center;
+      }
+        .edit{
+          width: 25px;
+        }
+        .view-btn{
+            width: 150px;
+            height: 61PX;
+            background-color: #1CA6EB;
+            border: none;
+            outline: none;
+            border-radius:  0px 5px 5px 0px ;
+            transform: translateX(38px);
+        }
+        
+      }
+    } 
+  }
+  
+
+  @media (max-width: 850px) {
+    .body-container{
+        margin-left: 100px;
+    }
+    th.id,td.id{
+        display: none;
+    }
+    th.Category,td.Category{
+        display: none;
+    }
+
+    
+  }
