@@ -14,7 +14,7 @@ $primary-color:#1CA6EB;
     nav {
       background: $primary-color;
       line-height: 80px;
-      position: fixed;
+      // position: fixed;
       width: 100%;
   
       label {
@@ -22,7 +22,7 @@ $primary-color:#1CA6EB;
         font-size: 30px;
         color: white;
         font-weight: 200;
-        margin-left: 50px;
+        margin-left: 108px;
         cursor: pointer;
       }
   
@@ -63,10 +63,13 @@ $primary-color:#1CA6EB;
     background: $primary-color;
     width: 250px;
     height: 1000vh;
-    margin-top: 84PX;
+    transform: translatey(-85px);
+    
+    // margin-top: 84PX;
     
   
     center {
+      transform: translateY(130px);
       img {
         height: 120px;
         width: 120px;
@@ -84,6 +87,7 @@ $primary-color:#1CA6EB;
       display: block;
       line-height: 60px;
       transition: 0.5s;
+      transform: translateY(145px);
   
       &:hover {
         background: rgb(86, 178, 221);
@@ -164,6 +168,7 @@ $primary-color:#1CA6EB;
   
     nav .menu-bar {
       display: block;
+      transform: translateY(-81px);
     }
   }
   
@@ -176,6 +181,7 @@ $primary-color:#1CA6EB;
   .body-container{
     // margin-top: 85px;
     margin-left: 250PX;
+    
     // width: 100%;
     .search{
       margin-top: 40PX;
@@ -262,7 +268,7 @@ $primary-color:#1CA6EB;
        
       font-size: 115%;
       overflow: auto; */
-      margin-top: 10px;
+      margin-top: 50px;
       margin-left: 3%;
       width: 95%;
       border-collapse: separate;
@@ -376,8 +382,10 @@ $primary-color:#1CA6EB;
       nav{
         position: static;
       }
+      
     .body-container{
         margin-left: 0px;
+        // transform: translateY(-61px);
         table{
             
             width: 370px;
@@ -438,8 +446,15 @@ $primary-color:#1CA6EB;
       margin-top: 0;
   }
   .side-menu{
-    margin-top: 0;
+    margin-top: 85px;
   }
+  
+.add-container {
+    
+    padding-left: 120px;
+    padding-right: 120px;
+    transform: translateX(78px);
+}
 
     
 }

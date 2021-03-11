@@ -228,7 +228,6 @@ body {
 nav {
   background: #1CA6EB;
   line-height: 80px;
-  position: fixed;
   width: 100%;
 }
 
@@ -237,7 +236,7 @@ nav label {
   font-size: 30px;
   color: white;
   font-weight: 200;
-  margin-left: 50px;
+  margin-left: 108px;
   cursor: pointer;
 }
 
@@ -280,7 +279,13 @@ nav ul li a:hover {
   background: #1CA6EB;
   width: 250px;
   height: 1000vh;
-  margin-top: 84PX;
+  -webkit-transform: translatey(-85px);
+          transform: translatey(-85px);
+}
+
+.side-menu center {
+  -webkit-transform: translateY(130px);
+          transform: translateY(130px);
 }
 
 .side-menu center img {
@@ -300,6 +305,8 @@ nav ul li a:hover {
   line-height: 60px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  -webkit-transform: translateY(145px);
+          transform: translateY(145px);
 }
 
 .side-menu a:hover {
@@ -370,6 +377,8 @@ nav .menu-bar {
   }
   nav .menu-bar {
     display: block;
+    -webkit-transform: translateY(-81px);
+            transform: translateY(-81px);
   }
 }
 
@@ -478,7 +487,7 @@ nav .menu-bar {
        
       font-size: 115%;
       overflow: auto; */
-  margin-top: 10px;
+  margin-top: 50px;
   margin-left: 3%;
   width: 95%;
   border-collapse: separate;
@@ -637,7 +646,13 @@ nav .menu-bar {
     margin-top: 0;
   }
   .side-menu {
-    margin-top: 0;
+    margin-top: 85px;
+  }
+  .add-container {
+    padding-left: 120px;
+    padding-right: 120px;
+    -webkit-transform: translateX(78px);
+            transform: translateX(78px);
   }
 }
 /*# sourceMappingURL=dashboard.css.map */
