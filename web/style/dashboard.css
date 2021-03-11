@@ -39,7 +39,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: -32px 0;
+  margin: -px 0;
   display: block;
 }
 
@@ -209,6 +209,10 @@ form .form-row .textearea {
   .add-container {
     font-size: 30px;
     margin-top: 0px;
+  }
+  .add-container form .form-row {
+    margin: -20px -85px;
+    display: block;
   }
 }
 
@@ -653,6 +657,19 @@ nav .menu-bar {
     padding-right: 120px;
     -webkit-transform: translateX(78px);
             transform: translateX(78px);
+  }
+  .add-container form .form-row {
+    margin: -20px -85px;
+    display: block;
+  }
+  .input-data input:valid ~ label, .textearea textarea:valid ~ label, .input-data input:focus ~ label, .textearea textarea:focus ~ label {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    font-size: 12px;
+    color: white;
+    bottom: -7px;
+    left: 4px;
+    border-bottom: transparent;
   }
 }
 /*# sourceMappingURL=dashboard.css.map */

@@ -24,7 +24,7 @@
 		padding: 10px 0 0 0 0;
 		.form-row {
 			display: flex;
-			margin: -32px 0;
+			margin: -px 0;
 			display: block;
 		}
 	}
@@ -177,7 +177,12 @@ form {
     .add-container {
         font-size: 30px;
         margin-top: 0px;
+		
     }
-}
-
+	.add-container form .form-row {
+		
+		margin: -20px -85px;
+		display: block;
+	}
+ }
 
