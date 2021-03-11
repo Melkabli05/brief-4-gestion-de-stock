@@ -1,3 +1,217 @@
+.cnt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+  background: #F5F6FA;
+}
+
+.add-container {
+  background: white;
+  width: 800px;
+  max-width: 800px;
+  padding: 25px 40px 10px 40px;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 80px;
+}
+
+.add-container .text {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  color: #1CA6EB;
+}
+
+.add-container form {
+  padding: 30px 0 0 0 0;
+  padding: 10px 0 0 0 0;
+}
+
+.add-container form .form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: -32px 0;
+  display: block;
+}
+
+form .form-row .input-data {
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+  margin: 35px 0 !important;
+}
+
+form .form-row .input-data #id {
+  background: #1ca6eb10;
+  border-radius: 2px;
+}
+
+form .form-row .textearea {
+  height: 70px;
+}
+
+.input-data input, .textearea textarea {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.textearea textarea {
+  resize: none;
+  padding-top: 10px;
+}
+
+.textearea label {
+  width: 100%;
+  bottom: auto;
+  bottom: 270px;
+}
+
+.input-data input:valid ~ label,
+.textearea textarea:valid ~ label,
+.input-data input:focus ~ label,
+.textearea textarea:focus ~ label {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  font-size: 20px;
+  color: white;
+  bottom: -10px;
+  left: 30px;
+  border-bottom: transparent;
+}
+
+.input-data label {
+  position: absolute;
+  bottom: 10px;
+  font-size: 16px;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.input-data .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.inputfile + label {
+  font-size: 16px;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  outline: none;
+}
+
+.input-data .underline:before,
+.input-data .underline:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.input-data input:valid ~ .underline:before, .underline:after,
+.textearea textarea:valid ~ .underline:before, .underline:after,
+.input-data input:focus ~ .underline:before, .underline:after,
+.textearea textarea:focus ~ .underline:before, .underline:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.submit-btn .input-data {
+  height: 45px !important;
+  width: 25% !important;
+  overflow: hidden;
+  height: 40px !important;
+  width: 25% !important;
+}
+
+.submit-btn .input-data .inner {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #1CA6EB;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.submit-btn .input-data:hover .inner {
+  background: #494747;
+}
+
+.submit-btn .input-data input {
+  position: relative;
+  z-index: 2;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .add-container {
+    font-size: 30px;
+    margin-top: 100PX;
+  }
+}
+
+.input-data input:valid ~ label,
+.textearea textarea:valid ~ label,
+.input-data input:focus ~ label,
+.textearea textarea:focus ~ label {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  font-size: 15px;
+  color: white;
+  bottom: -9px;
+  left: 7px;
+  border-bottom: transparent;
+}
+
+@media (max-width: 375px) {
+  .add-container {
+    font-size: 30px;
+    margin-top: 0px;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -11,18 +225,14 @@ body {
   background-color: #F5F6FA;
 }
 
-.nav-bar {
-  position: fixed;
-}
-
-.nav-bar nav {
+nav {
   background: #1CA6EB;
   line-height: 80px;
   position: fixed;
   width: 100%;
 }
 
-.nav-bar nav label {
+nav label {
   line-height: 80px;
   font-size: 30px;
   color: white;
@@ -31,26 +241,28 @@ body {
   cursor: pointer;
 }
 
-.nav-bar nav ul {
+nav ul {
   float: right;
   margin-right: 20px;
 }
 
-.nav-bar nav ul li {
+nav ul li {
   line-height: 80px;
   margin: 0 10px;
 }
 
-.nav-bar nav ul li a {
+nav ul li a {
   color: white;
   font-size: 20px;
   padding: 6px 15px;
   font-weight: 600;
   background-color: #3722f6;
-  border-radius: 3px;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 10px #888888;
+          box-shadow: 5px 10px #888888;
 }
 
-.nav-bar nav ul li a:hover {
+nav ul li a:hover {
   background-color: #311bd6;
   color: white;
   -webkit-transition: 0.5s;
@@ -67,8 +279,8 @@ body {
   position: fixed;
   background: #1CA6EB;
   width: 250px;
-  height: 100%;
-  margin-top: 80px;
+  height: 1000vh;
+  margin-top: 84PX;
 }
 
 .side-menu center img {
@@ -118,7 +330,7 @@ nav .menu-bar {
   display: none;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1024px) {
   .side-menu {
     width: 100px;
   }
@@ -142,9 +354,10 @@ nav .menu-bar {
     width: 100%;
     text-align: center;
     left: 100%;
-    background-color: #4c516d;
+    background-color: #1CA6EB;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+    z-index: 11;
   }
   .side-menu a i {
     display: none;
@@ -166,15 +379,15 @@ nav .menu-bar {
 
 /* ========content========= */
 .body-container {
-  margin-top: 85px;
   margin-left: 250PX;
-  width: 100%;
 }
 
 .body-container .search {
   margin-top: 40PX;
   margin-bottom: 10px;
-  margin-left: 40px;
+  margin-left: 3%;
+  margin-right: 40px;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -182,35 +395,78 @@ nav .menu-bar {
       flex-wrap: wrap;
 }
 
+.body-container .search .searchbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.body-container .search .searchbox .mobile-btn {
+  width: 30PX;
+  display: none;
+}
+
+.body-container .search .searchbox .search-text {
+  display: block;
+}
+
 .body-container .search .searchbox input {
-  height: 46px;
-  width: 700px;
+  height: 50px;
+  width: 50%;
   outline: none;
   border-color: #707070;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
 }
 
 .body-container .search .searchbox button {
   height: 50px;
-  width: 150px;
-  border-radius: 5px;
+  width: 275px;
+  border-radius: 0 5PX 5PX 0;
   outline: none;
   border: none;
   background-color: #707070;
   color: #fff;
 }
 
+.body-container .search .searchbox #search {
+  margin-right: 10px;
+}
+
+.body-container .search .searchbox .edit-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.body-container .search .searchbox .edit-button button {
+  width: 250PX;
+}
+
 .body-container .search .edit-button button {
   border-radius: 5px;
   height: 50px;
-  width: 250px;
-  margin-left: 10px;
+  width: 275px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
   outline: none;
   border: 1px;
 }
 
+.body-container .search .edit-button button h5 {
+  display: none;
+}
+
+.body-container .search .edit-button .mobile-btn {
+  width: 30PX;
+  display: none;
+}
+
 .body-container .search .edit-button #add {
   background-color: #1CA6EB;
+  margin-right: 10px;
 }
 
 .body-container .search .edit-button #remove {
@@ -223,7 +479,7 @@ nav .menu-bar {
       font-size: 115%;
       overflow: auto; */
   margin-top: 10px;
-  margin-left: 40px;
+  margin-left: 3%;
   width: 95%;
   border-collapse: separate;
   border-spacing: 0 10px;
@@ -245,13 +501,14 @@ nav .menu-bar {
 
 .body-container table tr .last {
   border-radius: 0 5PX 5PX 0;
+  padding-right: 0;
 }
 
 .body-container table th {
   background-color: #1CA6EB;
   color: black;
   font-weight: normal;
-  padding: 0px 30px;
+  padding: 0px 18px;
 }
 
 .body-container table th .first .first {
@@ -266,7 +523,7 @@ nav .menu-bar {
 .body-container table td {
   background-color: #fff;
   color: #6f6f6f;
-  padding: 0px 30px;
+  padding: 0px 18px;
 }
 
 .body-container table td .product-name {
@@ -274,7 +531,7 @@ nav .menu-bar {
   text-align: center;
 }
 
-.body-container table td .edit {
+.body-container table td .edit-btn {
   width: 25px;
 }
 
@@ -285,19 +542,102 @@ nav .menu-bar {
   border: none;
   outline: none;
   border-radius: 0px 5px 5px 0px;
-  -webkit-transform: translateX(38px);
-          transform: translateX(38px);
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50PX;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1024px) {
   .body-container {
-    margin-left: 100px;
+    margin-left: 95px;
+  }
+  .search .searchbox {
+    margin-bottom: 10px;
+  }
+  .search .searchbox input {
+    width: 60%;
+  }
+  .search .searchbox button {
+    width: 165PXs;
+  }
+  .search .searchbox .edit-button {
+    width: 38%;
   }
   th.id, td.id {
     display: none;
   }
   th.Category, td.Category {
     display: none;
+  }
+}
+
+@media (max-width: 1280px) {
+  th.id, td.id {
+    display: none;
+  }
+  th.Category, td.Category {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  nav {
+    position: static;
+  }
+  .body-container {
+    margin-left: 0px;
+  }
+  .body-container table {
+    width: 370px;
+    margin: 0;
+    -webkit-transform: translateX(2.5px);
+            transform: translateX(2.5px);
+  }
+  .body-container table .product-img {
+    width: 50px;
+    border-radius: 10PX;
+  }
+  .body-container .searchbox input {
+    width: 70%;
+  }
+  .body-container .searchbox .search {
+    width: 30%;
+  }
+  th.Category,
+  td.Category,
+  th.id, td.id,
+  th.quantity,
+  td.quantity,
+  th.last, td.last,
+  th.price, td.price {
+    display: none;
+  }
+  th.edit, td.edit {
+    border-radius: 0 5PX 5PX 0;
+    padding: 0;
+  }
+  .body-container .search .edit-button .mobile-btn {
+    width: 30px;
+    display: block;
+  }
+  .body-container .search .searchbox .search-text {
+    display: none;
+  }
+  .body-container .search .searchbox .mobile-btn {
+    display: block;
+    margin: auto;
+  }
+  .body-container .search .searchbox button {
+    width: 60PX;
+  }
+  .body-container .search {
+    margin-top: 15px;
+  }
+  nav .menu-bar {
+    margin-top: 0;
+  }
+  .side-menu {
+    margin-top: 0;
   }
 }
 /*# sourceMappingURL=dashboard.css.map */
