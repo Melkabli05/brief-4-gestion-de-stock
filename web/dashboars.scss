@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import 'add';
 @import'popup';
 body {
@@ -169,7 +170,7 @@ body {
 	padding: 0 16px;
 	background-color: #1facd2;
 }
-@media only screen and(min-width: 46.875em) {
+@media only screen and(min-width: 750PX) {
 	.grid-container {
 		grid-template-columns: 240px 1fr;
 		grid-template-areas: "sidenav header" "sidenav main" "sidenav footer";
@@ -193,6 +194,9 @@ table {
 	tr {
 		height: 61px;
 		text-align: center;
+		.description{
+			display: none;
+		}
 		img {
 			width: 100px;
 			height: 50px;
@@ -205,6 +209,7 @@ table {
                 height: 20px;
                 border-radius:5px;
                 padding: 0;
+				visibility: hidden;
             }
 		}
 		.last {
@@ -301,7 +306,6 @@ table {
 			display: none;
 		}
 		&.edit {
-			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 			border-radius: 0 5px 5px 0;
 		}
 	}
@@ -310,7 +314,6 @@ table {
 			display: none;
 		}
 		&.edit {
-			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 			border-radius: 0 5px 5px 0;
 		}
 	}
@@ -322,19 +325,32 @@ table {
 	width: 45px;
 	height: 45px;
 	cursor: pointer;
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 	border-radius: 50%;
 }
 .overviewcard__icon i {
 	font-size: 35px;
+	width: 35PX;
+    /* height: 50PX; */
+    background-color: beige;
+    border-radius: 50%;
+    ALIGN-ITEMS: center;
+    TEXT-ALIGN: center;
+    JUSTIFY-CONTENT: center;
+    padding: 16PX;
 }
-.edit  i {
+.edit-icon {
+    display: flex;
+    flex-direction: row;
+	justify-content: center;
+}
+
+.edit-icon a  {
 	font-size: 20Px;
 	color: #1facd2;
+	cursor: pointer;
+	margin: 5px;
 }
 
-
-.edit i:last-child {
+.edit-icon a:last-child {
 	color: red;
-    margin: 5px;
 }
