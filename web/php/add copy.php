@@ -1,3 +1,20 @@
+<?php
+include ("connexion.php"); 
+
+if(isset($POST['submit'])){
+    $name = htmlspecialchars(trim(strtolower ($POST['product_category'])));
+    $category = htmlspecialchars(trim(strtolower ($POST['product_name'])));
+    $quantity = htmlspecialchars(trim(strtolower ($POST['product_quantity'])));
+    $price = htmlspecialchars(trim(strtolower ($POST['product_price'])));
+    $description = htmlspecialchars(trim(strtolower ($POST['product_description'])));
+    $image = htmlspecialchars(trim(strtolower ($POST['product_image'])));
+    $query = "INSERT INTO product(Image,Name,Price,Category,quantity,Description)VALUES('$image','$name','$price','$category','$quantity','$description')";
+    mysqli_query($con,$query);
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +48,7 @@
             </div>
             <ul class="sidenav__list">
                 <li class="sidenav__list-item"><i class="fas fa-home"></i><a href="dashboard.html">Home</a></li>
-                <li class="sidenav__list-item"><i class="fas fa-plus-circle"></i><a href="add.html">Add</a></li>
+                <li class="sidenav__list-item"><i class="fas fa-plus-circle"></i><a href="#">Add</a></li>
                 <li class="sidenav__list-item"><i class="fas fa-user"></i><a href="#">Profile</a></li>
                 <li class="sidenav__list-item"><i class="fas fa-cog"></i><a href="#">Setting</a></li>
             </ul>
@@ -41,37 +58,37 @@
             <div class="main-cards">
                 <div class="card">
                     <!-- add product form -->
-                    <div class="title">Update product</div>
-                        <form action="#">
+                    <div class="title">New product</div>
+                        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                             <div class="user-details">
                                 <div class="form-box">
-                                    
+                                   
                                     <div class="input-box">
                                         <span class="details">Product name</span>
-                                        <input type="text" placeholder="Enter product name" required>
+                                        <input type="text" name="product_name" placeholder="Enter product name" required>
                                     </div>
                                     <div class="input-box">
                                         <span class="details">Category</span>
-                                        <input type="text" placeholder="Enter product Category" required>
+                                        <input type="text" name="product_category" placeholder="Enter product Category" required>
                                     </div>
                                     <div class="input-box">
                                         <span class="details">quantity</span>
-                                        <input type="number" placeholder="Enter product quantity" required>
+                                        <input type="number" name="product_quantity" placeholder="Enter product quantity" required>
                                     </div>
                                     <div class="input-box">
                                         <span class="details">Price</span>
-                                        <input type="number" placeholder="Enter product price $" required>
+                                        <input type="number" name="product_price" placeholder="Enter product price $" required>
                                     </div>
                                 </div>
                                 <div class="textarea-box">
                                     <span class="details">description</span>
-                                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                                    <textarea name="description" name="product_description" id="description" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
 
                             <div class="button">
-                                <input class="submit" type="submit" value="Update product"> 
-                                <input type="file" id="upload" hidden/>
+                                <input class="submit" type="submit" value="Add product"> 
+                                <input type="file" name="product_image" id="upload" hidden/>
                                 <label class="upload" for="upload">Choose file</label>
                             </div>
                         </form>
@@ -90,7 +107,6 @@
         </footer>
     </div>
     <script src="main.js"></script>
-    <script src="REGEX.JS"></script>
 </body>
 
 </html>

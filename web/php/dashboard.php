@@ -15,6 +15,12 @@
 </head>
 
 <body>
+
+<?php
+    include 'connex.php';
+    $product = readProduct();
+    var_dump($product)
+?>
     <div class="grid-container">
         <div class="menu-icon">
             <i class="fas fa-bars header__menu"></i>
@@ -98,7 +104,8 @@
                                 </td>
                                 <td class="id">#1</td>
                                 <td>
-                                    <img data-modal-target="#modal" class="product-img" src="../img/product.jfif" alt="pizza">
+                                    <img data-modal-target="#modal" class="product-img" src="../img/product.jfif"
+                                        alt="pizza">
                                 </td>
                                 <td data-modal-target="#modal" class="product-name">name</td>
                                 <td class="price">price</td>
@@ -115,7 +122,7 @@
                                     <button data-modal-target="#modal" class="view-btn">View</button>
                                 </td>
                             </tr>
-                           
+
 
 
 
@@ -166,6 +173,7 @@
     </div>
     <script src="main.js"></script>
     <script src="script.js"></script>
+    
 </body>
 
 </html>
