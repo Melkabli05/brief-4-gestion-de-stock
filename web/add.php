@@ -1,17 +1,22 @@
 <?php
-include ("connexion.php"); 
+include_once("connexion.php");
 
-if(isset($POST['submit'])){
-    $name = htmlspecialchars(trim(strtolower ($POST['product_category'])));
-    $category = htmlspecialchars(trim(strtolower ($POST['product_name'])));
-    $quantity = htmlspecialchars(trim(strtolower ($POST['product_quantity'])));
-    $price = htmlspecialchars(trim(strtolower ($POST['product_price'])));
-    $description = htmlspecialchars(trim(strtolower ($POST['product_description'])));
-    $image = htmlspecialchars(trim(strtolower ($POST['product_image'])));
-    $query = "INSERT INTO product(Image,Name,Price,Category,quantity,Description)VALUES('$image','$name','$price','$category','$quantity','$description')";
-    mysqli_query($con,$query);
+    $name =  isset($_POST['product_name'])?$_POST['product_name']:null;
+    $category = isset($_POST['product_category'])?$_POST['product_category']:null;
+    $quantity = isset($_POST['product_quantity'])?$_POST['product_quantity']:null;
+    $price = isset($_POST['product_price'])?$_POST['product_quantity']:null;
+    $description = isset($_POST['product_description'])?$_POST['product_description']:null;
+    $image = isset($_POST['product_image'])?$_POST['product_image']:null;
 
+
+if (isset($_POST['submit'])) {
+   
+//    echo "test";
+    $sql = "INSERT INTO product (image, Name, Price, Category, 	quantity, Description) VALUES ('$image', '$name', '$price','$category','$quantity','$description')";
+    $stmt= $con->prepare($sql);
+    $stmt->execute(); 
 }
+
 
 ?>
 
@@ -23,13 +28,14 @@ if(isset($POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add product</title>
-    <link rel="stylesheet" href="dashboars.css">
+    <link rel="stylesheet" href="style/dashboars.css">
     <link href="fontawesome-free-5.15.2-web/css/all.css" rel="stylesheet">
     <!--load all styles -->
 
 </head>
 
 <body>
+    
     <div class="grid-container">
         <div class="menu-icon">
             <i class="fas fa-bars header__menu"></i>
@@ -47,8 +53,8 @@ if(isset($POST['submit'])){
                 <i class="fas fa-times sidenav__brand-close"></i>
             </div>
             <ul class="sidenav__list">
-                <li class="sidenav__list-item"><i class="fas fa-home"></i><a href="dashboard.html">Home</a></li>
-                <li class="sidenav__list-item"><i class="fas fa-plus-circle"></i><a href="#">Add</a></li>
+                <li class="sidenav__list-item"><i class="fas fa-home"></i><a href="dashboard.php">Home</a></li>
+                <li class="sidenav__list-item"><i class="fas fa-plus-circle"></i><a href="add.php">Add</a></li>
                 <li class="sidenav__list-item"><i class="fas fa-user"></i><a href="#">Profile</a></li>
                 <li class="sidenav__list-item"><i class="fas fa-cog"></i><a href="#">Setting</a></li>
             </ul>
@@ -59,36 +65,36 @@ if(isset($POST['submit'])){
                 <div class="card">
                     <!-- add product form -->
                     <div class="title">New product</div>
-                        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+                        <form method="POST" id="formX" action="add.php"  >
                             <div class="user-details">
                                 <div class="form-box">
                                    
                                     <div class="input-box">
                                         <span class="details">Product name</span>
-                                        <input type="text" name="product_name" placeholder="Enter product name" required>
+                                        <input name="product_name" type="text" placeholder="Enter product name" required>
                                     </div>
                                     <div class="input-box">
                                         <span class="details">Category</span>
-                                        <input type="text" name="product_category" placeholder="Enter product Category" required>
+                                        <input name="product_category" type="text" placeholder="Enter product Category" required>
                                     </div>
                                     <div class="input-box">
                                         <span class="details">quantity</span>
-                                        <input type="number" name="product_quantity" placeholder="Enter product quantity" required>
+                                        <input name="product_quantity" min="0" type="number" placeholder="Enter product quantity" required>
                                     </div>
                                     <div class="input-box">
                                         <span class="details">Price</span>
-                                        <input type="number" name="product_price" placeholder="Enter product price $" required>
+                                        <input name="product_price" min="0" type="number" placeholder="Enter product price $" required>
                                     </div>
                                 </div>
                                 <div class="textarea-box">
                                     <span class="details">description</span>
-                                    <textarea name="description" name="product_description" id="description" cols="30" rows="10"></textarea>
+                                    <textarea name="product_description" id="description" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
 
                             <div class="button">
-                                <input class="submit" type="submit" value="Add product"> 
-                                <input type="file" name="product_image" id="upload" hidden/>
+                                <input class="submit" name="submit" type="submit" value="Add product"> 
+                                <input name="product_image" type="file" id="upload" hidden/>
                                 <label class="upload" for="upload">Choose file</label>
                             </div>
                         </form>
@@ -107,6 +113,7 @@ if(isset($POST['submit'])){
         </footer>
     </div>
     <script src="main.js"></script>
+    <SCript src="REGEX.JS"></SCript>
 </body>
 
 </html>

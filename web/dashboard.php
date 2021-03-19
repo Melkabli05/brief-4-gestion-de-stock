@@ -1,3 +1,7 @@
+<?php
+include_once("connexion.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,9 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboars.css">
+    <link rel="stylesheet" href="style/dashboars.css">
     <link href="fontawesome-free-5.15.2-web/css/all.css" rel="stylesheet">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!--load all styles -->
 
@@ -33,7 +36,7 @@
             </div>
             <ul class="sidenav__list">
                 <li class="sidenav__list-item"><i class="fas fa-home"></i><a href="#">Home</a></li>
-                <li class="sidenav__list-item"><i class="fas fa-plus-circle"></i><a href="add.html">Add</a></li>
+                <li class="sidenav__list-item"><i class="fas fa-plus-circle"></i><a href="add.php">Add</a></li>
                 <li class="sidenav__list-item"><i class="fas fa-user"></i><a href="#">Profile</a></li>
                 <li class="sidenav__list-item"><i class="fas fa-cog"></i><a href="#">Setting</a></li>
             </ul>
@@ -93,38 +96,41 @@
                                 <th class="last"></th>
                             </tr>
 
-                            <form action="">
-                                <tr>
-                                    <td class="first">
-                                        <input class="checkbox" type="checkbox">
-                                    </td>
-                                    <td class="id">#1</td>
-                                    <td>
-                                        <img data-modal-target="#modal" class="product-img" src="../img/product.jfif"
-                                            alt="pizza">
-                                    </td>
-                                    <td data-modal-target="#modal" class="product-name">name</td>
-                                    <td class="price">price</td>
-                                    <td class="Category">Category</td>
-                                    <th class="description">description</th>
-                                    <td class="quantity">quantity</td>
-                                    <td class="edit">
-                                        <div class="edit-icon">
-                                            <a href="edit.html"><i class="fas fa-edit"></i></a>
-                                            <a href="#"><i class="fas fa-trash-alt"></i></a>
-                                        </div>
-                                    </td>
-                                    <td class="last">
-                                        <button data-modal-target="#modal" class="view-btn">View</button>
-                                    </td>
-                                </tr>
-                            </form>
+                            <?php
+                            include 'connexion.php';
+                            $reponse = $con->query('SELECT * FROM product');
+                            while ($row = $reponse->fetch()) {
+                       
+                            ?>
+                            <tr>
+                                <td class="first">
+                                    <input class="checkbox" type="checkbox">
+                                </td>
+                                <td class="id"># <?php echo $row ['id'] ?> </td>
+                                <td>
+                                    <img data-modal-target="#modal" class="product-img" src="img/<?php echo $row ['Image'] ?>" alt="pizza">
+                                </td>
+                                <td data-modal-target="#modal" class="product-name"><?php echo $row ['Name'] ?></td>
+                                <td class="price"><?php echo $row ['Price']; ?></td>
+                                <td class="Category"><?php echo $row ['Category'] ?></td>
+                                <th class="description"><?php echo $row ['Description'] ?></th>
+                                <td class="quantity"><?php echo $row ['quantity'] ?></td>
+                                <td class="edit">
+                                    <div class="edit-icon">
+                                        <a  href="edit.php?id=<?php echo $row ['id'] ?>"><i class="fas fa-edit"></i></a>
+                                        <a onclick="return confirm('Are you sure')"  href="delete.php?id=<?php echo $row ['id'] ?>"><i class="fas fa-trash-alt"></i></a>
+                                    </div>
+                                </td>
+                                <td class="last">
+                                    <button data-modal-target="#modal-<?php echo  $row ['id'] ?>" class="view-btn">View</button>
+                                </td>
+                            </tr>
+                            <?php } 
+                            $reponse->closeCursor();
+                            
+                            ?>
 
-
-
-
-
-
+    
                         </tbody>
                     </table>
                 </div>
@@ -133,31 +139,43 @@
         </main>
 
 
-
-        <div class="modal" id="modal">
+        <?php
+                include 'connexion.php';
+                $reponse = $con->query('SELECT * FROM product');
+                // echo $reponse->rowCount();
+                while ($row = $reponse->fetch()) {          
+            ?>
+        <div class="modal" id="modal-<?php echo  $row ['id'] ?>">
             <div class="modal-header">
                 <div class="title">Product info</div>
                 <button data-close-button class="close-button">&times;</button>
             </div>
+        
             <div class="modal-body">
                 <div class="modal-img"><img
-                        src="https://i.pinimg.com/originals/a9/10/e9/a910e9c382bdfeefb8249e9d6df8fcf8.jpg" alt="pizza"
+                        src="../img/<?php echo $row ['Image'] ?>" alt="pizza"
                         height="100%" width="215px"></div>
                 <div class="modal-text">
-                    <H2 class="product-title">Product name</H2>
+                    <H2 class="product-title"><?php echo $row ['Name'] ?></H2>
 
                     <div class="modal-text-popup">
-                        <H4 class="details">category </H4>
-                        <h4 class="details">quantity</h4>
+                        <H4 class="details"><?php echo $row ['Category'] ?> </H4>
+                        <h4 class="details">Qnt = <?php echo $row ['quantity'] ?></h4>
                     </div>
 
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit reiciendis quis accusantium
-                        corporis quos, doloribus optio fuga dicta sapiente placeat iure odio! Accusamus sapiente labore
-                        consectetur tenetur. Veniam, est minus.</p>
-                    <H2 class="price">120$</H2>
+                    <p id="descrip"><?php echo $row ['Description'] ?></p>
+                    <!-- <div class="description"></div> -->
+                    <H2 class="price"><?php echo $row ['Price']; ?> $</H2>
+
+                   
                 </div>
             </div>
-        </div>
+            </div>
+            <?php } 
+           
+                            
+            ?>
+        
         <div id="overlay"></div>
 
 
@@ -170,6 +188,8 @@
     </div>
     <script src="main.js"></script>
     <script src="script.js"></script>
+      
+
 </body>
 
 </html>

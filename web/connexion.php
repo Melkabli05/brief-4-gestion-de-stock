@@ -1,15 +1,16 @@
 <?php
-
-$host ="localhost";
-$user = "root";
-$pw = "";
+$servername = "localhost";
+$username = "root";
+$password = "";
 $nbd = "brief_4";
-$con = mysqli_connect($host, $user, $pw, $nbd);
-if ($con) {
-    echo "connected";
-}
-else {
-    echo "no connected";
-}
 
+// Create connection
+// $conn = new mysqli($servername, $username, $password, $nbd);
+try {
+    $con = new PDO("mysql:host=$servername;dbname=brief_4", $username, $password);
+    // echo "Connected successfully";
+  } catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+    die();
+  }
 ?>
