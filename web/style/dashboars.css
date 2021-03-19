@@ -394,12 +394,6 @@ body {
           box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-.overviewcard:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
-  cursor: pointer;
-}
-
 .main-cards {
   -webkit-column-count: 1;
           column-count: 1;
